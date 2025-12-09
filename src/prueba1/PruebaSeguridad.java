@@ -18,12 +18,16 @@ public class PruebaSeguridad {
 		try {
 			System.out.println("Obteniendo generador de claves con cifrado DES");
 			KeyGenerator keygen = KeyGenerator.getInstance("DES");
+
 			System.out.println("Generando la clave");
 			SecretKey key = keygen.generateKey();
+
 			System.out.println("Obteniendo la factoría de claves con cifrados DES");
 			SecretKeyFactory keyfac = SecretKeyFactory.getInstance("DES");
+
 			System.out.println("Generando keyspec");
 			KeySpec keyspec = keyfac.getKeySpec(key, DESKeySpec.class);
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
